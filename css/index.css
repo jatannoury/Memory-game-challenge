@@ -1,0 +1,42 @@
+body{
+    background-color: blue;
+}
+body>h1{
+    text-align: center;
+    font-size: 400%;
+    font-family:fantasy ;
+}
+.box{
+    border-top: 1px solid black;
+    
+}
+.row{
+    display: flex;
+    justify-content: center ;
+    
+}
+
+.container{
+    text-align: center;
+   
+}
+.box-1, .box-2, .box-3,.box-4{
+    padding: 3% 3% 3% 3%;
+    margin-top: 5%;
+    margin-right: 5%;
+    border-radius: 10px;
+    border:7px solid black;
+}
+.box-1{
+    background-color: green;
+}
+.box-2{
+    background-color: red;
+}
+
+.box-3{
+    background-color: yellow;
+}
+.box-4{
+    background-color: rgb(3, 3, 56);
+}
