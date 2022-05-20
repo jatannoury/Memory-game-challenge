@@ -1,3 +1,4 @@
+@import url('http://fonts.cdnfonts.com/css/common-pixel');
 body{
     background-color: blue;
 }
@@ -5,6 +6,8 @@ body>h1{
     text-align: center;
     font-size: 400%;
     font-family:fantasy ;
+    padding-right: 10%;
+    font-family: 'Common Pixel', sans-serif;;
 }
 .box{
     border-top: 1px solid black;
@@ -13,11 +16,13 @@ body>h1{
 .row{
     display: flex;
     justify-content: center ;
+    padding-right: 5%;
     
 }
 
 .container{
     text-align: center;
+    justify-content: center;
    
 }
 .box-1, .box-2, .box-3,.box-4{
@@ -30,9 +35,7 @@ body>h1{
 .box-1{
     background-color: green;
 }
-.box-1:hover{
-    background-color: grey;
-}
+
 .box-2{
     background-color: red;
 }
