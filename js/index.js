@@ -57,3 +57,12 @@ function getRandomInt(min, max) {
         }
         
          
+function compare(array1,array){
+    if (array1[array1.length-1]!=array[array1.length-1]){
+        console.log("array1",array1)
+        console.log("array",array)
+        return false;
+        }
+        
+        return true;
+    } 
