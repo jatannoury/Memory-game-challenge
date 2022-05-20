@@ -56,7 +56,13 @@ function getRandomInt(min, max) {
     return Math.floor(Math.random() * (max - min +1)) + min;
         }
         
-         
+function gameOver(){
+    document.getElementById('Body').style.backgroundColor= 'Red';  //changes the color of the box
+    setTimeout(function resetColor(){//Resets the color of the box after 0.5s
+            document.getElementById('Body').style.backgroundColor= 'Blue'; 
+            document.getElementById('Body').addEventListener("click",function(){location.reload()})
+            
+    },1000)}         
 function compare(array1,array){
     if (array1[array1.length-1]!=array[array1.length-1]){
         console.log("array1",array1)
