@@ -66,3 +66,77 @@ function compare(array1,array){
         
         return true;
     } 
+function Start(array){
+    array1=[]
+    if (!array)array=[getRandomInt(1,4)]
+    autoPlay(array)
+    function onClick(y) { 
+        console.log("ARR",array,array1)
+        switch(y){
+            case 1:
+                Click(1);
+                array1.push(1);
+                if (!compare(array1,array)){
+                    document.getElementById("titre").innerHTML="Game Over,Press Any Key To Restart";
+                    gameover++;
+                    gameOver();
+                    return;
+                    }
+                    break;
+            case 2:
+                Click(2);
+                array1.push(2);
+                if (compare(array1,array)==false){
+                    document.getElementById("titre").innerHTML="Game Over,Press Any Key To Restart";
+                    gameover++;
+                    gameOver();
+                    return;
+                    }
+                    break;
+            case 3:
+                Click(3);
+                array1.push(3);
+                if (!compare(array1,array)){
+                    document.getElementById("titre").innerHTML="Game Over,Press Any Key To Restart";
+                    gameover++;
+                    gameOver();
+                    }
+                    break;
+            case 4:
+                Click(4);
+                array1.push(4);
+                if (!compare(array1,array)){
+                    document.getElementById("titre").innerHTML="Game Over,Press Any Key To Restart";
+                    gameover++;
+                    gameOver();
+                    return;
+                    }
+                    break;}
+                if (array1.length==array.length){
+                    rand=getRandomInt(1,4)
+                    autoPlay([rand]);
+                    array.push(rand);
+                    array1=[];
+                    document.getElementById("titre").innerHTML=`Level ${array.length}`
+                    return;   
+                    }    
+                    
+                    
+            }
+            
+      
+    document.getElementById('box2').addEventListener("click",function (){onClick(2)});
+    document.getElementById('box3').addEventListener("click",function (){onClick(3)});
+    document.getElementById('box4').addEventListener("click",function (){onClick(4)});
+    document.getElementById('box1').addEventListener("click",function (){onClick(1)});
+    setTimeout(function(){
+        document.getElementById('Body').addEventListener("click",function (){
+            if(!gameover)return;
+        document.getElementById("titre").innerHTML="Level 1";
+        
+    },1000)});
+    
+    }
+document.getElementById("Body").addEventListener("click",function(){
+    document.getElementById("titre").innerHTML="Level 1";
+    Start()},{once:true})
