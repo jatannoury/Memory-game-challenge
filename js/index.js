@@ -98,7 +98,11 @@ function compare(array1,array){
 function Start(array){
     array1=[]
     if (!array)array=[getRandomInt(1,4)]
-    autoPlay(array)
+    autoPlay(array);
+    //function: onClick
+    //input: int indicating box clicked
+    //output: None
+    //functionality: calls Click fct, pushes into array1 and compares
     function onClick(y) { 
         switch(y){
             case 1:
