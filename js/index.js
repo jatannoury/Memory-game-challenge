@@ -4,6 +4,10 @@ const audio2=new Audio("../assets/sounds/red.mp3")
 const audio3=new Audio("../assets/sounds/yellow.mp3")
 const audio4=new Audio("../assets/sounds/blue.mp3")
 gameover=0;
+//function: Click
+//input: x => int designating the box number
+//output: None
+//functionality: add the hover effect after click while playing the assigned audio
 function Click(x){
    
     if (x==1){
@@ -35,6 +39,10 @@ function Click(x){
         },500)
     }
 }
+//function: autoPlay
+//input: array => array holding the box nb needed to be played
+//output: None
+//functionality: add the hover effect after click while playing the assigned audio
 function autoPlay(array){
     console.log(array)
 
@@ -50,19 +58,30 @@ function autoPlay(array){
     }
         autoClick();
     }
+//function: getRandomInt
+//input: int=> min,max => 2 numbers each defining respectively the upper and lower boudaries of the required random nb
+//output: int
+//functionality: returns a random int between min and max
 function getRandomInt(min, max) {
     max = Math.ceil(max);
     min = Math.floor(min);
     return Math.floor(Math.random() * (max - min +1)) + min;
         }
-        
+//function: gameOver
+//input: None
+//output: None
+//functionality: resets the game   
 function gameOver(){
     document.getElementById('Body').style.backgroundColor= 'Red';  //changes the color of the box
     setTimeout(function resetColor(){//Resets the color of the box after 0.5s
             document.getElementById('Body').style.backgroundColor= 'Blue'; 
-            document.getElementById('Body').addEventListener("click",function(){location.reload()})
+            document.getElementById('Body').addEventListener("click",function(){location.reload()})//location.reload() resets the js code
             
-    },1000)}         
+    },1000)}   
+//function: compare
+//input: None
+//output: Bool
+//functionality: compares the last elemet added to array1 and the corresponding index in array     
 function compare(array1,array){
     if (array1[array1.length-1]!=array[array1.length-1]){
         console.log("array1",array1)
@@ -72,12 +91,15 @@ function compare(array1,array){
         
         return true;
     } 
+//function: Start
+//input: array
+//output: None
+//functionality: connects all the functions  defined  
 function Start(array){
     array1=[]
     if (!array)array=[getRandomInt(1,4)]
     autoPlay(array)
     function onClick(y) { 
-        console.log("ARR",array,array1)
         switch(y){
             case 1:
                 Click(1);
