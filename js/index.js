@@ -3,6 +3,7 @@ const audio1=new Audio("../assets/sounds/green.mp3")
 const audio2=new Audio("../assets/sounds/red.mp3")
 const audio3=new Audio("../assets/sounds/yellow.mp3")
 const audio4=new Audio("../assets/sounds/blue.mp3")
+const wrong=new Audio("../assets/sounds/wrong.mp3")
 gameover=0;
 //function: Click
 //input: x => int designating the box number
@@ -72,6 +73,7 @@ function getRandomInt(min, max) {
 //output: None
 //functionality: resets the game   
 function gameOver(){
+    wrong.play()
     document.getElementById('Body').style.backgroundColor= 'Red';  //changes the color of the box
     setTimeout(function resetColor(){//Resets the color of the box after 0.5s
             document.getElementById('Body').style.backgroundColor= 'Blue'; 
